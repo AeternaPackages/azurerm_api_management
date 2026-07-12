@@ -132,9 +132,13 @@ Nested api_management_authorization_servers (azurerm_api_management_authorizatio
         - bearer_token_sending_methods
         - client_authentication_method
         - client_secret
+        - client_secret_key_vault_id (alternative to client_secret - read from Key Vault instead)
+        - client_secret_key_vault_secret_name (alternative to client_secret - read from Key Vault instead)
         - default_scope
         - description
         - resource_owner_password
+        - resource_owner_password_key_vault_id (alternative to resource_owner_password - read from Key Vault instead)
+        - resource_owner_password_key_vault_secret_name (alternative to resource_owner_password - read from Key Vault instead)
         - resource_owner_username
         - support_state
         - token_endpoint
@@ -160,9 +164,13 @@ Nested api_management_certificates (azurerm_api_management_certificate):
         - resource_group_name
     Optional:
         - data
+        - data_key_vault_id (alternative to data - read from Key Vault instead)
+        - data_key_vault_secret_name (alternative to data - read from Key Vault instead)
         - key_vault_identity_client_id
         - key_vault_secret_id
         - password
+        - password_key_vault_id (alternative to password - read from Key Vault instead)
+        - password_key_vault_secret_name (alternative to password - read from Key Vault instead)
 Nested api_management_custom_domains (azurerm_api_management_custom_domain):
     Optional:
         - developer_portal (block)
@@ -242,6 +250,8 @@ Nested api_management_identity_provider_aads (azurerm_api_management_identity_pr
         - allowed_tenants
         - client_id
         - client_secret
+        - client_secret_key_vault_id (alternative to client_secret - read from Key Vault instead)
+        - client_secret_key_vault_secret_name (alternative to client_secret - read from Key Vault instead)
         - resource_group_name
     Optional:
         - client_library
@@ -252,6 +262,8 @@ Nested api_management_identity_provider_aadb2cs (azurerm_api_management_identity
         - authority
         - client_id
         - client_secret
+        - client_secret_key_vault_id (alternative to client_secret - read from Key Vault instead)
+        - client_secret_key_vault_secret_name (alternative to client_secret - read from Key Vault instead)
         - resource_group_name
         - signin_policy
         - signin_tenant
@@ -264,21 +276,31 @@ Nested api_management_identity_provider_facebooks (azurerm_api_management_identi
     Required:
         - app_id
         - app_secret
+        - app_secret_key_vault_id (alternative to app_secret - read from Key Vault instead)
+        - app_secret_key_vault_secret_name (alternative to app_secret - read from Key Vault instead)
         - resource_group_name
 Nested api_management_identity_provider_googles (azurerm_api_management_identity_provider_google):
     Required:
         - client_id
         - client_secret
+        - client_secret_key_vault_id (alternative to client_secret - read from Key Vault instead)
+        - client_secret_key_vault_secret_name (alternative to client_secret - read from Key Vault instead)
         - resource_group_name
 Nested api_management_identity_provider_microsofts (azurerm_api_management_identity_provider_microsoft):
     Required:
         - client_id
         - client_secret
+        - client_secret_key_vault_id (alternative to client_secret - read from Key Vault instead)
+        - client_secret_key_vault_secret_name (alternative to client_secret - read from Key Vault instead)
         - resource_group_name
 Nested api_management_identity_provider_twitters (azurerm_api_management_identity_provider_twitter):
     Required:
         - api_key
+        - api_key_key_vault_id (alternative to api_key - read from Key Vault instead)
+        - api_key_key_vault_secret_name (alternative to api_key - read from Key Vault instead)
         - api_secret_key
+        - api_secret_key_key_vault_id (alternative to api_secret_key - read from Key Vault instead)
+        - api_secret_key_key_vault_secret_name (alternative to api_secret_key - read from Key Vault instead)
         - resource_group_name
 Nested api_management_loggers (azurerm_api_management_logger):
     Required:
@@ -299,6 +321,8 @@ Nested api_management_named_values (azurerm_api_management_named_value):
         - secret
         - tags
         - value
+        - value_key_vault_id (alternative to value - read from Key Vault instead)
+        - value_key_vault_secret_name (alternative to value - read from Key Vault instead)
         - value_from_key_vault (block)
 Nested api_management_notification_recipient_emails (azurerm_api_management_notification_recipient_email):
     Required:
@@ -311,7 +335,11 @@ Nested api_management_notification_recipient_users (azurerm_api_management_notif
 Nested api_management_openid_connect_providers (azurerm_api_management_openid_connect_provider):
     Required:
         - client_id
+        - client_id_key_vault_id (alternative to client_id - read from Key Vault instead)
+        - client_id_key_vault_secret_name (alternative to client_id - read from Key Vault instead)
         - client_secret
+        - client_secret_key_vault_id (alternative to client_secret - read from Key Vault instead)
+        - client_secret_key_vault_secret_name (alternative to client_secret - read from Key Vault instead)
         - display_name
         - metadata_endpoint
         - name
@@ -360,6 +388,8 @@ Nested api_management_product_policies (azurerm_api_management_product_policy):
 Nested api_management_redis_caches (azurerm_api_management_redis_cache):
     Required:
         - connection_string
+        - connection_string_key_vault_id (alternative to connection_string - read from Key Vault instead)
+        - connection_string_key_vault_secret_name (alternative to connection_string - read from Key Vault instead)
         - name
     Optional:
         - cache_location
@@ -373,8 +403,12 @@ Nested api_management_subscriptions (azurerm_api_management_subscription):
         - allow_tracing
         - api_id
         - primary_key
+        - primary_key_key_vault_id (alternative to primary_key - read from Key Vault instead)
+        - primary_key_key_vault_secret_name (alternative to primary_key - read from Key Vault instead)
         - product_id
         - secondary_key
+        - secondary_key_key_vault_id (alternative to secondary_key - read from Key Vault instead)
+        - secondary_key_key_vault_secret_name (alternative to secondary_key - read from Key Vault instead)
         - state
         - subscription_id
         - user_id
@@ -394,6 +428,8 @@ Nested api_management_users (azurerm_api_management_user):
         - confirmation
         - note
         - password
+        - password_key_vault_id (alternative to password - read from Key Vault instead)
+        - password_key_vault_secret_name (alternative to password - read from Key Vault instead)
         - state
 Nested api_management_workspaces (azurerm_api_management_workspace):
     Required:
@@ -415,8 +451,12 @@ Nested api_management_workspaces (azurerm_api_management_workspace):
             - name
         Optional:
             - certificate_data_base64
+            - certificate_data_base64_key_vault_id (alternative to certificate_data_base64 - read from Key Vault instead)
+            - certificate_data_base64_key_vault_secret_name (alternative to certificate_data_base64 - read from Key Vault instead)
             - key_vault_secret_id
             - password
+            - password_key_vault_id (alternative to password - read from Key Vault instead)
+            - password_key_vault_secret_name (alternative to password - read from Key Vault instead)
             - user_assigned_identity_client_id
     Nested api_management_workspace_named_values (azurerm_api_management_workspace_named_value):
         Required:
@@ -426,6 +466,8 @@ Nested api_management_workspaces (azurerm_api_management_workspace):
             - secret
             - tags
             - value
+            - value_key_vault_id (alternative to value - read from Key Vault instead)
+            - value_key_vault_secret_name (alternative to value - read from Key Vault instead)
             - value_from_key_vault (block)
     Nested api_management_workspace_policies (azurerm_api_management_workspace_policy):
         Optional:
@@ -863,23 +905,27 @@ EOT
       version_query_name  = optional(string)
     })))
     api_management_authorization_servers = optional(map(object({
-      authorization_endpoint       = string
-      authorization_methods        = set(string)
-      client_id                    = string
-      client_registration_endpoint = string
-      display_name                 = string
-      grant_types                  = set(string)
-      name                         = string
-      resource_group_name          = string
-      resource_owner_username      = optional(string)
-      resource_owner_password      = optional(string)
-      description                  = optional(string)
-      bearer_token_sending_methods = optional(set(string))
-      client_secret                = optional(string)
-      client_authentication_method = optional(set(string))
-      support_state                = optional(bool)
-      default_scope                = optional(string)
-      token_endpoint               = optional(string)
+      authorization_endpoint                        = string
+      authorization_methods                         = set(string)
+      client_id                                     = string
+      client_registration_endpoint                  = string
+      display_name                                  = string
+      grant_types                                   = set(string)
+      name                                          = string
+      resource_group_name                           = string
+      resource_owner_username                       = optional(string)
+      resource_owner_password                       = optional(string)
+      resource_owner_password_key_vault_id          = optional(string)
+      resource_owner_password_key_vault_secret_name = optional(string)
+      description                                   = optional(string)
+      bearer_token_sending_methods                  = optional(set(string))
+      client_secret                                 = optional(string)
+      client_secret_key_vault_id                    = optional(string)
+      client_secret_key_vault_secret_name           = optional(string)
+      client_authentication_method                  = optional(set(string))
+      support_state                                 = optional(bool)
+      default_scope                                 = optional(string)
+      token_endpoint                                = optional(string)
       token_body_parameter = optional(list(object({
         name  = string
         value = string
@@ -939,12 +985,16 @@ EOT
       }))
     })))
     api_management_certificates = optional(map(object({
-      name                         = string
-      resource_group_name          = string
-      data                         = optional(string)
-      key_vault_identity_client_id = optional(string)
-      key_vault_secret_id          = optional(string)
-      password                     = optional(string)
+      name                           = string
+      resource_group_name            = string
+      data                           = optional(string)
+      data_key_vault_id              = optional(string)
+      data_key_vault_secret_name     = optional(string)
+      key_vault_identity_client_id   = optional(string)
+      key_vault_secret_id            = optional(string)
+      password                       = optional(string)
+      password_key_vault_id          = optional(string)
+      password_key_vault_secret_name = optional(string)
     })))
     api_management_custom_domains = optional(map(object({
       developer_portal = optional(list(object({
@@ -1113,45 +1163,59 @@ EOT
       user_id             = string
     })))
     api_management_identity_provider_aads = optional(map(object({
-      allowed_tenants     = list(string)
-      client_id           = string
-      client_secret       = string
-      resource_group_name = string
-      client_library      = optional(string)
-      signin_tenant       = optional(string)
+      allowed_tenants                     = list(string)
+      client_id                           = string
+      client_secret                       = string
+      client_secret_key_vault_id          = optional(string)
+      client_secret_key_vault_secret_name = optional(string)
+      resource_group_name                 = string
+      client_library                      = optional(string)
+      signin_tenant                       = optional(string)
     })))
     api_management_identity_provider_aadb2cs = optional(map(object({
-      allowed_tenant         = string
-      authority              = string
-      client_id              = string
-      client_secret          = string
-      resource_group_name    = string
-      signin_policy          = string
-      signin_tenant          = string
-      signup_policy          = string
-      client_library         = optional(string)
-      password_reset_policy  = optional(string)
-      profile_editing_policy = optional(string)
+      allowed_tenant                      = string
+      authority                           = string
+      client_id                           = string
+      client_secret                       = string
+      client_secret_key_vault_id          = optional(string)
+      client_secret_key_vault_secret_name = optional(string)
+      resource_group_name                 = string
+      signin_policy                       = string
+      signin_tenant                       = string
+      signup_policy                       = string
+      client_library                      = optional(string)
+      password_reset_policy               = optional(string)
+      profile_editing_policy              = optional(string)
     })))
     api_management_identity_provider_facebooks = optional(map(object({
-      app_id              = string
-      app_secret          = string
-      resource_group_name = string
+      app_id                           = string
+      app_secret                       = string
+      app_secret_key_vault_id          = optional(string)
+      app_secret_key_vault_secret_name = optional(string)
+      resource_group_name              = string
     })))
     api_management_identity_provider_googles = optional(map(object({
-      client_id           = string
-      client_secret       = string
-      resource_group_name = string
+      client_id                           = string
+      client_secret                       = string
+      client_secret_key_vault_id          = optional(string)
+      client_secret_key_vault_secret_name = optional(string)
+      resource_group_name                 = string
     })))
     api_management_identity_provider_microsofts = optional(map(object({
-      client_id           = string
-      client_secret       = string
-      resource_group_name = string
+      client_id                           = string
+      client_secret                       = string
+      client_secret_key_vault_id          = optional(string)
+      client_secret_key_vault_secret_name = optional(string)
+      resource_group_name                 = string
     })))
     api_management_identity_provider_twitters = optional(map(object({
-      api_key             = string
-      api_secret_key      = string
-      resource_group_name = string
+      api_key                              = string
+      api_key_key_vault_id                 = optional(string)
+      api_key_key_vault_secret_name        = optional(string)
+      api_secret_key                       = string
+      api_secret_key_key_vault_id          = optional(string)
+      api_secret_key_key_vault_secret_name = optional(string)
+      resource_group_name                  = string
     })))
     api_management_loggers = optional(map(object({
       name                = string
@@ -1171,12 +1235,14 @@ EOT
       }))
     })))
     api_management_named_values = optional(map(object({
-      display_name        = string
-      name                = string
-      resource_group_name = string
-      secret              = optional(bool) # Default: false
-      tags                = optional(list(string))
-      value               = optional(string)
+      display_name                = string
+      name                        = string
+      resource_group_name         = string
+      secret                      = optional(bool) # Default: false
+      tags                        = optional(list(string))
+      value                       = optional(string)
+      value_key_vault_id          = optional(string)
+      value_key_vault_secret_name = optional(string)
       value_from_key_vault = optional(object({
         identity_client_id = optional(string)
         secret_id          = string
@@ -1191,13 +1257,17 @@ EOT
       user_id           = string
     })))
     api_management_openid_connect_providers = optional(map(object({
-      client_id           = string
-      client_secret       = string
-      display_name        = string
-      metadata_endpoint   = string
-      name                = string
-      resource_group_name = string
-      description         = optional(string)
+      client_id                           = string
+      client_id_key_vault_id              = optional(string)
+      client_id_key_vault_secret_name     = optional(string)
+      client_secret                       = string
+      client_secret_key_vault_id          = optional(string)
+      client_secret_key_vault_secret_name = optional(string)
+      display_name                        = string
+      metadata_endpoint                   = string
+      name                                = string
+      resource_group_name                 = string
+      description                         = optional(string)
     })))
     api_management_policies = optional(map(object({
       xml_content = optional(string)
@@ -1236,38 +1306,46 @@ EOT
       xml_link            = optional(string)
     })))
     api_management_redis_caches = optional(map(object({
-      connection_string = string
-      name              = string
-      cache_location    = optional(string) # Default: "default"
-      description       = optional(string)
-      redis_cache_id    = optional(string)
+      connection_string                       = string
+      connection_string_key_vault_id          = optional(string)
+      connection_string_key_vault_secret_name = optional(string)
+      name                                    = string
+      cache_location                          = optional(string) # Default: "default"
+      description                             = optional(string)
+      redis_cache_id                          = optional(string)
     })))
     api_management_subscriptions = optional(map(object({
-      display_name        = string
-      resource_group_name = string
-      allow_tracing       = optional(bool) # Default: true
-      api_id              = optional(string)
-      primary_key         = optional(string)
-      product_id          = optional(string)
-      secondary_key       = optional(string)
-      state               = optional(string) # Default: "submitted"
-      subscription_id     = optional(string)
-      user_id             = optional(string)
+      display_name                        = string
+      resource_group_name                 = string
+      allow_tracing                       = optional(bool) # Default: true
+      api_id                              = optional(string)
+      primary_key                         = optional(string)
+      primary_key_key_vault_id            = optional(string)
+      primary_key_key_vault_secret_name   = optional(string)
+      product_id                          = optional(string)
+      secondary_key                       = optional(string)
+      secondary_key_key_vault_id          = optional(string)
+      secondary_key_key_vault_secret_name = optional(string)
+      state                               = optional(string) # Default: "submitted"
+      subscription_id                     = optional(string)
+      user_id                             = optional(string)
     })))
     api_management_tags = optional(map(object({
       name         = string
       display_name = optional(string)
     })))
     api_management_users = optional(map(object({
-      email               = string
-      first_name          = string
-      last_name           = string
-      resource_group_name = string
-      user_id             = string
-      confirmation        = optional(string)
-      note                = optional(string)
-      password            = optional(string)
-      state               = optional(string)
+      email                          = string
+      first_name                     = string
+      last_name                      = string
+      resource_group_name            = string
+      user_id                        = string
+      confirmation                   = optional(string)
+      note                           = optional(string)
+      password                       = optional(string)
+      password_key_vault_id          = optional(string)
+      password_key_vault_secret_name = optional(string)
+      state                          = optional(string)
     })))
     api_management_workspaces = optional(map(object({
       display_name = string
@@ -1282,18 +1360,24 @@ EOT
         version_query_name  = optional(string)
       })))
       api_management_workspace_certificates = optional(map(object({
-        name                             = string
-        certificate_data_base64          = optional(string)
-        key_vault_secret_id              = optional(string)
-        password                         = optional(string)
-        user_assigned_identity_client_id = optional(string)
+        name                                          = string
+        certificate_data_base64                       = optional(string)
+        certificate_data_base64_key_vault_id          = optional(string)
+        certificate_data_base64_key_vault_secret_name = optional(string)
+        key_vault_secret_id                           = optional(string)
+        password                                      = optional(string)
+        password_key_vault_id                         = optional(string)
+        password_key_vault_secret_name                = optional(string)
+        user_assigned_identity_client_id              = optional(string)
       })))
       api_management_workspace_named_values = optional(map(object({
-        display_name = string
-        name         = string
-        secret       = optional(bool) # Default: false
-        tags         = optional(list(string))
-        value        = optional(string)
+        display_name                = string
+        name                        = string
+        secret                      = optional(bool) # Default: false
+        tags                        = optional(list(string))
+        value                       = optional(string)
+        value_key_vault_id          = optional(string)
+        value_key_vault_secret_name = optional(string)
         value_from_key_vault = optional(object({
           identity_client_id = optional(string)
           secret_id          = string
