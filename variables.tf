@@ -456,7 +456,7 @@ EOT
     tags                          = optional(map(string))
     virtual_network_type          = optional(string) # Default: "None"
     zones                         = optional(set(string))
-    additional_location = optional(object({
+    additional_location = optional(list(object({
       capacity             = optional(number)
       gateway_disabled     = optional(bool) # Default: false
       location             = string
@@ -465,7 +465,7 @@ EOT
         subnet_id = string
       }))
       zones = optional(set(string))
-    }))
+    })))
     certificate = optional(list(object({
       certificate_password = optional(string)
       encoded_certificate  = string
@@ -478,7 +478,7 @@ EOT
       validation_key            = optional(string)
     }))
     hostname_configuration = optional(object({
-      developer_portal = optional(object({
+      developer_portal = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -486,8 +486,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      management = optional(object({
+      })))
+      management = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -495,8 +495,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      portal = optional(object({
+      })))
+      portal = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -504,8 +504,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      proxy = optional(object({
+      })))
+      proxy = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         default_ssl_binding             = optional(bool)
@@ -514,8 +514,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      scm = optional(object({
+      })))
+      scm = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -523,7 +523,7 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
+      })))
     }))
     identity = optional(object({
       identity_ids = optional(set(string))
@@ -634,56 +634,56 @@ EOT
         backend_request = optional(object({
           body_bytes = optional(number)
           data_masking = optional(object({
-            headers = optional(object({
+            headers = optional(list(object({
               mode  = string
               value = string
-            }))
-            query_params = optional(object({
+            })))
+            query_params = optional(list(object({
               mode  = string
               value = string
-            }))
+            })))
           }))
           headers_to_log = optional(set(string))
         }))
         backend_response = optional(object({
           body_bytes = optional(number)
           data_masking = optional(object({
-            headers = optional(object({
+            headers = optional(list(object({
               mode  = string
               value = string
-            }))
-            query_params = optional(object({
+            })))
+            query_params = optional(list(object({
               mode  = string
               value = string
-            }))
+            })))
           }))
           headers_to_log = optional(set(string))
         }))
         frontend_request = optional(object({
           body_bytes = optional(number)
           data_masking = optional(object({
-            headers = optional(object({
+            headers = optional(list(object({
               mode  = string
               value = string
-            }))
-            query_params = optional(object({
+            })))
+            query_params = optional(list(object({
               mode  = string
               value = string
-            }))
+            })))
           }))
           headers_to_log = optional(set(string))
         }))
         frontend_response = optional(object({
           body_bytes = optional(number)
           data_masking = optional(object({
-            headers = optional(object({
+            headers = optional(list(object({
               mode  = string
               value = string
-            }))
-            query_params = optional(object({
+            })))
+            query_params = optional(list(object({
               mode  = string
               value = string
-            }))
+            })))
           }))
           headers_to_log = optional(set(string))
         }))
@@ -697,137 +697,137 @@ EOT
         description         = optional(string)
         request = optional(object({
           description = optional(string)
-          header = optional(object({
+          header = optional(list(object({
             default_value = optional(string)
             description   = optional(string)
-            example = optional(object({
+            example = optional(list(object({
               description    = optional(string)
               external_value = optional(string)
               name           = string
               summary        = optional(string)
               value          = optional(string)
-            }))
+            })))
             name      = string
             required  = bool
             schema_id = optional(string)
             type      = string
             type_name = optional(string)
             values    = optional(set(string))
-          }))
-          query_parameter = optional(object({
+          })))
+          query_parameter = optional(list(object({
             default_value = optional(string)
             description   = optional(string)
-            example = optional(object({
+            example = optional(list(object({
               description    = optional(string)
               external_value = optional(string)
               name           = string
               summary        = optional(string)
               value          = optional(string)
-            }))
+            })))
             name      = string
             required  = bool
             schema_id = optional(string)
             type      = string
             type_name = optional(string)
             values    = optional(set(string))
-          }))
-          representation = optional(object({
+          })))
+          representation = optional(list(object({
             content_type = string
-            example = optional(object({
+            example = optional(list(object({
               description    = optional(string)
               external_value = optional(string)
               name           = string
               summary        = optional(string)
               value          = optional(string)
-            }))
-            form_parameter = optional(object({
+            })))
+            form_parameter = optional(list(object({
               default_value = optional(string)
               description   = optional(string)
-              example = optional(object({
+              example = optional(list(object({
                 description    = optional(string)
                 external_value = optional(string)
                 name           = string
                 summary        = optional(string)
                 value          = optional(string)
-              }))
+              })))
               name      = string
               required  = bool
               schema_id = optional(string)
               type      = string
               type_name = optional(string)
               values    = optional(set(string))
-            }))
+            })))
             schema_id = optional(string)
             type_name = optional(string)
-          }))
+          })))
         }))
-        response = optional(object({
+        response = optional(list(object({
           description = optional(string)
-          header = optional(object({
+          header = optional(list(object({
             default_value = optional(string)
             description   = optional(string)
-            example = optional(object({
+            example = optional(list(object({
               description    = optional(string)
               external_value = optional(string)
               name           = string
               summary        = optional(string)
               value          = optional(string)
-            }))
+            })))
             name      = string
             required  = bool
             schema_id = optional(string)
             type      = string
             type_name = optional(string)
             values    = optional(set(string))
-          }))
-          representation = optional(object({
+          })))
+          representation = optional(list(object({
             content_type = string
-            example = optional(object({
+            example = optional(list(object({
               description    = optional(string)
               external_value = optional(string)
               name           = string
               summary        = optional(string)
               value          = optional(string)
-            }))
-            form_parameter = optional(object({
+            })))
+            form_parameter = optional(list(object({
               default_value = optional(string)
               description   = optional(string)
-              example = optional(object({
+              example = optional(list(object({
                 description    = optional(string)
                 external_value = optional(string)
                 name           = string
                 summary        = optional(string)
                 value          = optional(string)
-              }))
+              })))
               name      = string
               required  = bool
               schema_id = optional(string)
               type      = string
               type_name = optional(string)
               values    = optional(set(string))
-            }))
+            })))
             schema_id = optional(string)
             type_name = optional(string)
-          }))
+          })))
           status_code = number
-        }))
-        template_parameter = optional(object({
+        })))
+        template_parameter = optional(list(object({
           default_value = optional(string)
           description   = optional(string)
-          example = optional(object({
+          example = optional(list(object({
             description    = optional(string)
             external_value = optional(string)
             name           = string
             summary        = optional(string)
             value          = optional(string)
-          }))
+          })))
           name      = string
           required  = bool
           schema_id = optional(string)
           type      = string
           type_name = optional(string)
           values    = optional(set(string))
-        }))
+        })))
       })))
       api_management_api_operation_policies = optional(map(object({
         operation_id        = string
@@ -880,10 +880,10 @@ EOT
       support_state                = optional(bool)
       default_scope                = optional(string)
       token_endpoint               = optional(string)
-      token_body_parameter = optional(object({
+      token_body_parameter = optional(list(object({
         name  = string
         value = string
-      }))
+      })))
     })))
     api_management_backends = optional(map(object({
       name                = string
@@ -928,10 +928,10 @@ EOT
         management_endpoints             = set(string)
         max_partition_resolution_retries = number
         server_certificate_thumbprints   = optional(set(string))
-        server_x509_name = optional(object({
+        server_x509_name = optional(list(object({
           issuer_certificate_thumbprint = string
           name                          = string
-        }))
+        })))
       }))
       tls = optional(object({
         validate_certificate_chain = optional(bool)
@@ -947,7 +947,7 @@ EOT
       password                     = optional(string)
     })))
     api_management_custom_domains = optional(map(object({
-      developer_portal = optional(object({
+      developer_portal = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -955,8 +955,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      gateway = optional(object({
+      })))
+      gateway = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         default_ssl_binding             = optional(bool)
@@ -965,8 +965,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      management = optional(object({
+      })))
+      management = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -974,8 +974,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      portal = optional(object({
+      })))
+      portal = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -983,8 +983,8 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
-      scm = optional(object({
+      })))
+      scm = optional(list(object({
         certificate                     = optional(string)
         certificate_password            = optional(string)
         host_name                       = string
@@ -992,7 +992,7 @@ EOT
         key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool) # Default: false
         ssl_keyvault_identity_client_id = optional(string)
-      }))
+      })))
     })))
     api_management_diagnostics = optional(map(object({
       api_management_logger_id  = string
@@ -1007,56 +1007,56 @@ EOT
       backend_request = optional(object({
         body_bytes = optional(number)
         data_masking = optional(object({
-          headers = optional(object({
+          headers = optional(list(object({
             mode  = string
             value = string
-          }))
-          query_params = optional(object({
+          })))
+          query_params = optional(list(object({
             mode  = string
             value = string
-          }))
+          })))
         }))
         headers_to_log = optional(set(string))
       }))
       backend_response = optional(object({
         body_bytes = optional(number)
         data_masking = optional(object({
-          headers = optional(object({
+          headers = optional(list(object({
             mode  = string
             value = string
-          }))
-          query_params = optional(object({
+          })))
+          query_params = optional(list(object({
             mode  = string
             value = string
-          }))
+          })))
         }))
         headers_to_log = optional(set(string))
       }))
       frontend_request = optional(object({
         body_bytes = optional(number)
         data_masking = optional(object({
-          headers = optional(object({
+          headers = optional(list(object({
             mode  = string
             value = string
-          }))
-          query_params = optional(object({
+          })))
+          query_params = optional(list(object({
             mode  = string
             value = string
-          }))
+          })))
         }))
         headers_to_log = optional(set(string))
       }))
       frontend_response = optional(object({
         body_bytes = optional(number)
         data_masking = optional(object({
-          headers = optional(object({
+          headers = optional(list(object({
             mode  = string
             value = string
-          }))
-          query_params = optional(object({
+          })))
+          query_params = optional(list(object({
             mode  = string
             value = string
-          }))
+          })))
         }))
         headers_to_log = optional(set(string))
       }))
