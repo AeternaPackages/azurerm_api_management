@@ -1,4 +1,9 @@
 # --- azurerm_api_management ---
+output "api_managements_id" {
+  description = "Map of id values across all api_managements, keyed the same as var.api_managements"
+  value       = module.api_managements.api_managements_id
+}
+
 output "api_managements_additional_location" {
   description = "Map of additional_location values across all api_managements, keyed the same as var.api_managements"
   value       = module.api_managements.api_managements_additional_location
@@ -174,6 +179,11 @@ output "api_managements_zones" {
 }
 
 # --- azurerm_api_management_api ---
+output "api_management_apis_id" {
+  description = "Map of id values across all api_management_apis, keyed the same as var.api_management_apis"
+  value       = module.api_management_apis.api_management_apis_id
+}
+
 output "api_management_apis_api_management_name" {
   description = "Map of api_management_name values across all api_management_apis, keyed the same as var.api_management_apis"
   value       = module.api_management_apis.api_management_apis_api_management_name
@@ -300,6 +310,11 @@ output "api_management_apis_version_set_id" {
 }
 
 # --- azurerm_api_management_api_version_set ---
+output "api_management_api_version_sets_id" {
+  description = "Map of id values across all api_management_api_version_sets, keyed the same as var.api_management_api_version_sets"
+  value       = module.api_management_api_version_sets.api_management_api_version_sets_id
+}
+
 output "api_management_api_version_sets_api_management_name" {
   description = "Map of api_management_name values across all api_management_api_version_sets, keyed the same as var.api_management_api_version_sets"
   value       = module.api_management_api_version_sets.api_management_api_version_sets_api_management_name
@@ -341,6 +356,11 @@ output "api_management_api_version_sets_versioning_scheme" {
 }
 
 # --- azurerm_api_management_authorization_server ---
+output "api_management_authorization_servers_id" {
+  description = "Map of id values across all api_management_authorization_servers, keyed the same as var.api_management_authorization_servers"
+  value       = module.api_management_authorization_servers.api_management_authorization_servers_id
+}
+
 output "api_management_authorization_servers_api_management_name" {
   description = "Map of api_management_name values across all api_management_authorization_servers, keyed the same as var.api_management_authorization_servers"
   value       = module.api_management_authorization_servers.api_management_authorization_servers_api_management_name
@@ -439,6 +459,11 @@ output "api_management_authorization_servers_token_endpoint" {
 }
 
 # --- azurerm_api_management_backend ---
+output "api_management_backends_id" {
+  description = "Map of id values across all api_management_backends, keyed the same as var.api_management_backends"
+  value       = module.api_management_backends.api_management_backends_id
+}
+
 output "api_management_backends_api_management_name" {
   description = "Map of api_management_name values across all api_management_backends, keyed the same as var.api_management_backends"
   value       = module.api_management_backends.api_management_backends_api_management_name
@@ -506,6 +531,11 @@ output "api_management_backends_url" {
 }
 
 # --- azurerm_api_management_certificate ---
+output "api_management_certificates_id" {
+  description = "Map of id values across all api_management_certificates, keyed the same as var.api_management_certificates"
+  value       = module.api_management_certificates.api_management_certificates_id
+}
+
 output "api_management_certificates_api_management_name" {
   description = "Map of api_management_name values across all api_management_certificates, keyed the same as var.api_management_certificates"
   value       = module.api_management_certificates.api_management_certificates_api_management_name
@@ -559,6 +589,11 @@ output "api_management_certificates_thumbprint" {
 }
 
 # --- azurerm_api_management_custom_domain ---
+output "api_management_custom_domains_id" {
+  description = "Map of id values across all api_management_custom_domains, keyed the same as var.api_management_custom_domains"
+  value       = module.api_management_custom_domains.api_management_custom_domains_id
+}
+
 output "api_management_custom_domains_api_management_id" {
   description = "Map of api_management_id values across all api_management_custom_domains, keyed the same as var.api_management_custom_domains"
   value       = module.api_management_custom_domains.api_management_custom_domains_api_management_id
@@ -595,6 +630,11 @@ output "api_management_custom_domains_scm" {
 }
 
 # --- azurerm_api_management_diagnostic ---
+output "api_management_diagnostics_id" {
+  description = "Map of id values across all api_management_diagnostics, keyed the same as var.api_management_diagnostics"
+  value       = module.api_management_diagnostics.api_management_diagnostics_id
+}
+
 output "api_management_diagnostics_always_log_errors" {
   description = "Map of always_log_errors values across all api_management_diagnostics, keyed the same as var.api_management_diagnostics"
   value       = module.api_management_diagnostics.api_management_diagnostics_always_log_errors
@@ -666,6 +706,11 @@ output "api_management_diagnostics_verbosity" {
 }
 
 # --- azurerm_api_management_email_template ---
+output "api_management_email_templates_id" {
+  description = "Map of id values across all api_management_email_templates, keyed the same as var.api_management_email_templates"
+  value       = module.api_management_email_templates.api_management_email_templates_id
+}
+
 output "api_management_email_templates_api_management_name" {
   description = "Map of api_management_name values across all api_management_email_templates, keyed the same as var.api_management_email_templates"
   value       = module.api_management_email_templates.api_management_email_templates_api_management_name
@@ -702,6 +747,11 @@ output "api_management_email_templates_title" {
 }
 
 # --- azurerm_api_management_gateway ---
+output "api_management_gateways_id" {
+  description = "Map of id values across all api_management_gateways, keyed the same as var.api_management_gateways"
+  value       = module.api_management_gateways.api_management_gateways_id
+}
+
 output "api_management_gateways_api_management_id" {
   description = "Map of api_management_id values across all api_management_gateways, keyed the same as var.api_management_gateways"
   value       = module.api_management_gateways.api_management_gateways_api_management_id
@@ -723,6 +773,11 @@ output "api_management_gateways_name" {
 }
 
 # --- azurerm_api_management_gateway_certificate_authority ---
+output "api_management_gateway_certificate_authorities_id" {
+  description = "Map of id values across all api_management_gateway_certificate_authorities, keyed the same as var.api_management_gateway_certificate_authorities"
+  value       = module.api_management_gateway_certificate_authorities.api_management_gateway_certificate_authorities_id
+}
+
 output "api_management_gateway_certificate_authorities_api_management_id" {
   description = "Map of api_management_id values across all api_management_gateway_certificate_authorities, keyed the same as var.api_management_gateway_certificate_authorities"
   value       = module.api_management_gateway_certificate_authorities.api_management_gateway_certificate_authorities_api_management_id
@@ -744,6 +799,11 @@ output "api_management_gateway_certificate_authorities_is_trusted" {
 }
 
 # --- azurerm_api_management_gateway_host_name_configuration ---
+output "api_management_gateway_host_name_configurations_id" {
+  description = "Map of id values across all api_management_gateway_host_name_configurations, keyed the same as var.api_management_gateway_host_name_configurations"
+  value       = module.api_management_gateway_host_name_configurations.api_management_gateway_host_name_configurations_id
+}
+
 output "api_management_gateway_host_name_configurations_api_management_id" {
   description = "Map of api_management_id values across all api_management_gateway_host_name_configurations, keyed the same as var.api_management_gateway_host_name_configurations"
   value       = module.api_management_gateway_host_name_configurations.api_management_gateway_host_name_configurations_api_management_id
@@ -790,6 +850,11 @@ output "api_management_gateway_host_name_configurations_tls11_enabled" {
 }
 
 # --- azurerm_api_management_global_schema ---
+output "api_management_global_schemas_id" {
+  description = "Map of id values across all api_management_global_schemas, keyed the same as var.api_management_global_schemas"
+  value       = module.api_management_global_schemas.api_management_global_schemas_id
+}
+
 output "api_management_global_schemas_api_management_name" {
   description = "Map of api_management_name values across all api_management_global_schemas, keyed the same as var.api_management_global_schemas"
   value       = module.api_management_global_schemas.api_management_global_schemas_api_management_name
@@ -821,6 +886,11 @@ output "api_management_global_schemas_value" {
 }
 
 # --- azurerm_api_management_group ---
+output "api_management_groups_id" {
+  description = "Map of id values across all api_management_groups, keyed the same as var.api_management_groups"
+  value       = module.api_management_groups.api_management_groups_id
+}
+
 output "api_management_groups_api_management_name" {
   description = "Map of api_management_name values across all api_management_groups, keyed the same as var.api_management_groups"
   value       = module.api_management_groups.api_management_groups_api_management_name
@@ -857,6 +927,11 @@ output "api_management_groups_type" {
 }
 
 # --- azurerm_api_management_group_user ---
+output "api_management_group_users_id" {
+  description = "Map of id values across all api_management_group_users, keyed the same as var.api_management_group_users"
+  value       = module.api_management_group_users.api_management_group_users_id
+}
+
 output "api_management_group_users_api_management_name" {
   description = "Map of api_management_name values across all api_management_group_users, keyed the same as var.api_management_group_users"
   value       = module.api_management_group_users.api_management_group_users_api_management_name
@@ -878,6 +953,11 @@ output "api_management_group_users_user_id" {
 }
 
 # --- azurerm_api_management_identity_provider_aad ---
+output "api_management_identity_provider_aads_id" {
+  description = "Map of id values across all api_management_identity_provider_aads, keyed the same as var.api_management_identity_provider_aads"
+  value       = module.api_management_identity_provider_aads.api_management_identity_provider_aads_id
+}
+
 output "api_management_identity_provider_aads_allowed_tenants" {
   description = "Map of allowed_tenants values across all api_management_identity_provider_aads, keyed the same as var.api_management_identity_provider_aads"
   value       = module.api_management_identity_provider_aads.api_management_identity_provider_aads_allowed_tenants
@@ -915,6 +995,11 @@ output "api_management_identity_provider_aads_signin_tenant" {
 }
 
 # --- azurerm_api_management_identity_provider_aadb2c ---
+output "api_management_identity_provider_aadb2cs_id" {
+  description = "Map of id values across all api_management_identity_provider_aadb2cs, keyed the same as var.api_management_identity_provider_aadb2cs"
+  value       = module.api_management_identity_provider_aadb2cs.api_management_identity_provider_aadb2cs_id
+}
+
 output "api_management_identity_provider_aadb2cs_allowed_tenant" {
   description = "Map of allowed_tenant values across all api_management_identity_provider_aadb2cs, keyed the same as var.api_management_identity_provider_aadb2cs"
   value       = module.api_management_identity_provider_aadb2cs.api_management_identity_provider_aadb2cs_allowed_tenant
@@ -977,6 +1062,11 @@ output "api_management_identity_provider_aadb2cs_signup_policy" {
 }
 
 # --- azurerm_api_management_identity_provider_facebook ---
+output "api_management_identity_provider_facebooks_id" {
+  description = "Map of id values across all api_management_identity_provider_facebooks, keyed the same as var.api_management_identity_provider_facebooks"
+  value       = module.api_management_identity_provider_facebooks.api_management_identity_provider_facebooks_id
+}
+
 output "api_management_identity_provider_facebooks_api_management_name" {
   description = "Map of api_management_name values across all api_management_identity_provider_facebooks, keyed the same as var.api_management_identity_provider_facebooks"
   value       = module.api_management_identity_provider_facebooks.api_management_identity_provider_facebooks_api_management_name
@@ -999,6 +1089,11 @@ output "api_management_identity_provider_facebooks_resource_group_name" {
 }
 
 # --- azurerm_api_management_identity_provider_google ---
+output "api_management_identity_provider_googles_id" {
+  description = "Map of id values across all api_management_identity_provider_googles, keyed the same as var.api_management_identity_provider_googles"
+  value       = module.api_management_identity_provider_googles.api_management_identity_provider_googles_id
+}
+
 output "api_management_identity_provider_googles_api_management_name" {
   description = "Map of api_management_name values across all api_management_identity_provider_googles, keyed the same as var.api_management_identity_provider_googles"
   value       = module.api_management_identity_provider_googles.api_management_identity_provider_googles_api_management_name
@@ -1021,6 +1116,11 @@ output "api_management_identity_provider_googles_resource_group_name" {
 }
 
 # --- azurerm_api_management_identity_provider_microsoft ---
+output "api_management_identity_provider_microsofts_id" {
+  description = "Map of id values across all api_management_identity_provider_microsofts, keyed the same as var.api_management_identity_provider_microsofts"
+  value       = module.api_management_identity_provider_microsofts.api_management_identity_provider_microsofts_id
+}
+
 output "api_management_identity_provider_microsofts_api_management_name" {
   description = "Map of api_management_name values across all api_management_identity_provider_microsofts, keyed the same as var.api_management_identity_provider_microsofts"
   value       = module.api_management_identity_provider_microsofts.api_management_identity_provider_microsofts_api_management_name
@@ -1043,6 +1143,11 @@ output "api_management_identity_provider_microsofts_resource_group_name" {
 }
 
 # --- azurerm_api_management_identity_provider_twitter ---
+output "api_management_identity_provider_twitters_id" {
+  description = "Map of id values across all api_management_identity_provider_twitters, keyed the same as var.api_management_identity_provider_twitters"
+  value       = module.api_management_identity_provider_twitters.api_management_identity_provider_twitters_id
+}
+
 output "api_management_identity_provider_twitters_api_key" {
   description = "Map of api_key values across all api_management_identity_provider_twitters, keyed the same as var.api_management_identity_provider_twitters"
   value       = module.api_management_identity_provider_twitters.api_management_identity_provider_twitters_api_key
@@ -1066,6 +1171,11 @@ output "api_management_identity_provider_twitters_resource_group_name" {
 }
 
 # --- azurerm_api_management_logger ---
+output "api_management_loggers_id" {
+  description = "Map of id values across all api_management_loggers, keyed the same as var.api_management_loggers"
+  value       = module.api_management_loggers.api_management_loggers_id
+}
+
 output "api_management_loggers_api_management_name" {
   description = "Map of api_management_name values across all api_management_loggers, keyed the same as var.api_management_loggers"
   value       = module.api_management_loggers.api_management_loggers_api_management_name
@@ -1109,6 +1219,11 @@ output "api_management_loggers_resource_id" {
 }
 
 # --- azurerm_api_management_named_value ---
+output "api_management_named_values_id" {
+  description = "Map of id values across all api_management_named_values, keyed the same as var.api_management_named_values"
+  value       = module.api_management_named_values.api_management_named_values_id
+}
+
 output "api_management_named_values_api_management_name" {
   description = "Map of api_management_name values across all api_management_named_values, keyed the same as var.api_management_named_values"
   value       = module.api_management_named_values.api_management_named_values_api_management_name
@@ -1151,6 +1266,11 @@ output "api_management_named_values_value_from_key_vault" {
 }
 
 # --- azurerm_api_management_notification_recipient_email ---
+output "api_management_notification_recipient_emails_id" {
+  description = "Map of id values across all api_management_notification_recipient_emails, keyed the same as var.api_management_notification_recipient_emails"
+  value       = module.api_management_notification_recipient_emails.api_management_notification_recipient_emails_id
+}
+
 output "api_management_notification_recipient_emails_api_management_id" {
   description = "Map of api_management_id values across all api_management_notification_recipient_emails, keyed the same as var.api_management_notification_recipient_emails"
   value       = module.api_management_notification_recipient_emails.api_management_notification_recipient_emails_api_management_id
@@ -1167,6 +1287,11 @@ output "api_management_notification_recipient_emails_notification_type" {
 }
 
 # --- azurerm_api_management_notification_recipient_user ---
+output "api_management_notification_recipient_users_id" {
+  description = "Map of id values across all api_management_notification_recipient_users, keyed the same as var.api_management_notification_recipient_users"
+  value       = module.api_management_notification_recipient_users.api_management_notification_recipient_users_id
+}
+
 output "api_management_notification_recipient_users_api_management_id" {
   description = "Map of api_management_id values across all api_management_notification_recipient_users, keyed the same as var.api_management_notification_recipient_users"
   value       = module.api_management_notification_recipient_users.api_management_notification_recipient_users_api_management_id
@@ -1183,6 +1308,11 @@ output "api_management_notification_recipient_users_user_id" {
 }
 
 # --- azurerm_api_management_openid_connect_provider ---
+output "api_management_openid_connect_providers_id" {
+  description = "Map of id values across all api_management_openid_connect_providers, keyed the same as var.api_management_openid_connect_providers"
+  value       = module.api_management_openid_connect_providers.api_management_openid_connect_providers_id
+}
+
 output "api_management_openid_connect_providers_api_management_name" {
   description = "Map of api_management_name values across all api_management_openid_connect_providers, keyed the same as var.api_management_openid_connect_providers"
   value       = module.api_management_openid_connect_providers.api_management_openid_connect_providers_api_management_name
@@ -1226,6 +1356,11 @@ output "api_management_openid_connect_providers_resource_group_name" {
 }
 
 # --- azurerm_api_management_policy ---
+output "api_management_policies_id" {
+  description = "Map of id values across all api_management_policies, keyed the same as var.api_management_policies"
+  value       = module.api_management_policies.api_management_policies_id
+}
+
 output "api_management_policies_api_management_id" {
   description = "Map of api_management_id values across all api_management_policies, keyed the same as var.api_management_policies"
   value       = module.api_management_policies.api_management_policies_api_management_id
@@ -1242,6 +1377,11 @@ output "api_management_policies_xml_link" {
 }
 
 # --- azurerm_api_management_policy_fragment ---
+output "api_management_policy_fragments_id" {
+  description = "Map of id values across all api_management_policy_fragments, keyed the same as var.api_management_policy_fragments"
+  value       = module.api_management_policy_fragments.api_management_policy_fragments_id
+}
+
 output "api_management_policy_fragments_api_management_id" {
   description = "Map of api_management_id values across all api_management_policy_fragments, keyed the same as var.api_management_policy_fragments"
   value       = module.api_management_policy_fragments.api_management_policy_fragments_api_management_id
@@ -1268,6 +1408,11 @@ output "api_management_policy_fragments_value" {
 }
 
 # --- azurerm_api_management_product ---
+output "api_management_products_id" {
+  description = "Map of id values across all api_management_products, keyed the same as var.api_management_products"
+  value       = module.api_management_products.api_management_products_id
+}
+
 output "api_management_products_api_management_name" {
   description = "Map of api_management_name values across all api_management_products, keyed the same as var.api_management_products"
   value       = module.api_management_products.api_management_products_api_management_name
@@ -1319,6 +1464,11 @@ output "api_management_products_terms" {
 }
 
 # --- azurerm_api_management_product_group ---
+output "api_management_product_groups_id" {
+  description = "Map of id values across all api_management_product_groups, keyed the same as var.api_management_product_groups"
+  value       = module.api_management_product_groups.api_management_product_groups_id
+}
+
 output "api_management_product_groups_api_management_name" {
   description = "Map of api_management_name values across all api_management_product_groups, keyed the same as var.api_management_product_groups"
   value       = module.api_management_product_groups.api_management_product_groups_api_management_name
@@ -1340,6 +1490,11 @@ output "api_management_product_groups_resource_group_name" {
 }
 
 # --- azurerm_api_management_product_policy ---
+output "api_management_product_policies_id" {
+  description = "Map of id values across all api_management_product_policies, keyed the same as var.api_management_product_policies"
+  value       = module.api_management_product_policies.api_management_product_policies_id
+}
+
 output "api_management_product_policies_api_management_name" {
   description = "Map of api_management_name values across all api_management_product_policies, keyed the same as var.api_management_product_policies"
   value       = module.api_management_product_policies.api_management_product_policies_api_management_name
@@ -1366,6 +1521,11 @@ output "api_management_product_policies_xml_link" {
 }
 
 # --- azurerm_api_management_redis_cache ---
+output "api_management_redis_caches_id" {
+  description = "Map of id values across all api_management_redis_caches, keyed the same as var.api_management_redis_caches"
+  value       = module.api_management_redis_caches.api_management_redis_caches_id
+}
+
 output "api_management_redis_caches_api_management_id" {
   description = "Map of api_management_id values across all api_management_redis_caches, keyed the same as var.api_management_redis_caches"
   value       = module.api_management_redis_caches.api_management_redis_caches_api_management_id
@@ -1398,6 +1558,11 @@ output "api_management_redis_caches_redis_cache_id" {
 }
 
 # --- azurerm_api_management_subscription ---
+output "api_management_subscriptions_id" {
+  description = "Map of id values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
+  value       = module.api_management_subscriptions.api_management_subscriptions_id
+}
+
 output "api_management_subscriptions_allow_tracing" {
   description = "Map of allow_tracing values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
   value       = module.api_management_subscriptions.api_management_subscriptions_allow_tracing
@@ -1456,6 +1621,11 @@ output "api_management_subscriptions_user_id" {
 }
 
 # --- azurerm_api_management_tag ---
+output "api_management_tags_id" {
+  description = "Map of id values across all api_management_tags, keyed the same as var.api_management_tags"
+  value       = module.api_management_tags.api_management_tags_id
+}
+
 output "api_management_tags_api_management_id" {
   description = "Map of api_management_id values across all api_management_tags, keyed the same as var.api_management_tags"
   value       = module.api_management_tags.api_management_tags_api_management_id
@@ -1472,6 +1642,11 @@ output "api_management_tags_name" {
 }
 
 # --- azurerm_api_management_user ---
+output "api_management_users_id" {
+  description = "Map of id values across all api_management_users, keyed the same as var.api_management_users"
+  value       = module.api_management_users.api_management_users_id
+}
+
 output "api_management_users_api_management_name" {
   description = "Map of api_management_name values across all api_management_users, keyed the same as var.api_management_users"
   value       = module.api_management_users.api_management_users_api_management_name
@@ -1524,6 +1699,11 @@ output "api_management_users_user_id" {
 }
 
 # --- azurerm_api_management_workspace ---
+output "api_management_workspaces_id" {
+  description = "Map of id values across all api_management_workspaces, keyed the same as var.api_management_workspaces"
+  value       = module.api_management_workspaces.api_management_workspaces_id
+}
+
 output "api_management_workspaces_api_management_id" {
   description = "Map of api_management_id values across all api_management_workspaces, keyed the same as var.api_management_workspaces"
   value       = module.api_management_workspaces.api_management_workspaces_api_management_id
@@ -1545,6 +1725,11 @@ output "api_management_workspaces_name" {
 }
 
 # --- azurerm_api_management_api_diagnostic ---
+output "api_management_api_diagnostics_id" {
+  description = "Map of id values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
+  value       = module.api_management_api_diagnostics.api_management_api_diagnostics_id
+}
+
 output "api_management_api_diagnostics_always_log_errors" {
   description = "Map of always_log_errors values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
   value       = module.api_management_api_diagnostics.api_management_api_diagnostics_always_log_errors
@@ -1621,6 +1806,11 @@ output "api_management_api_diagnostics_verbosity" {
 }
 
 # --- azurerm_api_management_api_operation ---
+output "api_management_api_operations_id" {
+  description = "Map of id values across all api_management_api_operations, keyed the same as var.api_management_api_operations"
+  value       = module.api_management_api_operations.api_management_api_operations_id
+}
+
 output "api_management_api_operations_api_management_name" {
   description = "Map of api_management_name values across all api_management_api_operations, keyed the same as var.api_management_api_operations"
   value       = module.api_management_api_operations.api_management_api_operations_api_management_name
@@ -1677,6 +1867,11 @@ output "api_management_api_operations_url_template" {
 }
 
 # --- azurerm_api_management_api_operation_policy ---
+output "api_management_api_operation_policies_id" {
+  description = "Map of id values across all api_management_api_operation_policies, keyed the same as var.api_management_api_operation_policies"
+  value       = module.api_management_api_operation_policies.api_management_api_operation_policies_id
+}
+
 output "api_management_api_operation_policies_api_management_name" {
   description = "Map of api_management_name values across all api_management_api_operation_policies, keyed the same as var.api_management_api_operation_policies"
   value       = module.api_management_api_operation_policies.api_management_api_operation_policies_api_management_name
@@ -1708,6 +1903,11 @@ output "api_management_api_operation_policies_xml_link" {
 }
 
 # --- azurerm_api_management_api_policy ---
+output "api_management_api_policies_id" {
+  description = "Map of id values across all api_management_api_policies, keyed the same as var.api_management_api_policies"
+  value       = module.api_management_api_policies.api_management_api_policies_id
+}
+
 output "api_management_api_policies_api_management_name" {
   description = "Map of api_management_name values across all api_management_api_policies, keyed the same as var.api_management_api_policies"
   value       = module.api_management_api_policies.api_management_api_policies_api_management_name
@@ -1734,6 +1934,11 @@ output "api_management_api_policies_xml_link" {
 }
 
 # --- azurerm_api_management_api_schema ---
+output "api_management_api_schemas_id" {
+  description = "Map of id values across all api_management_api_schemas, keyed the same as var.api_management_api_schemas"
+  value       = module.api_management_api_schemas.api_management_api_schemas_id
+}
+
 output "api_management_api_schemas_api_management_name" {
   description = "Map of api_management_name values across all api_management_api_schemas, keyed the same as var.api_management_api_schemas"
   value       = module.api_management_api_schemas.api_management_api_schemas_api_management_name
@@ -1775,6 +1980,11 @@ output "api_management_api_schemas_value" {
 }
 
 # --- azurerm_api_management_product_api ---
+output "api_management_product_apis_id" {
+  description = "Map of id values across all api_management_product_apis, keyed the same as var.api_management_product_apis"
+  value       = module.api_management_product_apis.api_management_product_apis_id
+}
+
 output "api_management_product_apis_api_management_name" {
   description = "Map of api_management_name values across all api_management_product_apis, keyed the same as var.api_management_product_apis"
   value       = module.api_management_product_apis.api_management_product_apis_api_management_name
@@ -1796,6 +2006,11 @@ output "api_management_product_apis_resource_group_name" {
 }
 
 # --- azurerm_api_management_product_tag ---
+output "api_management_product_tags_id" {
+  description = "Map of id values across all api_management_product_tags, keyed the same as var.api_management_product_tags"
+  value       = module.api_management_product_tags.api_management_product_tags_id
+}
+
 output "api_management_product_tags_api_management_name" {
   description = "Map of api_management_name values across all api_management_product_tags, keyed the same as var.api_management_product_tags"
   value       = module.api_management_product_tags.api_management_product_tags_api_management_name
@@ -1817,6 +2032,11 @@ output "api_management_product_tags_resource_group_name" {
 }
 
 # --- azurerm_api_management_workspace_api_version_set ---
+output "api_management_workspace_api_version_sets_id" {
+  description = "Map of id values across all api_management_workspace_api_version_sets, keyed the same as var.api_management_workspace_api_version_sets"
+  value       = module.api_management_workspace_api_version_sets.api_management_workspace_api_version_sets_id
+}
+
 output "api_management_workspace_api_version_sets_api_management_workspace_id" {
   description = "Map of api_management_workspace_id values across all api_management_workspace_api_version_sets, keyed the same as var.api_management_workspace_api_version_sets"
   value       = module.api_management_workspace_api_version_sets.api_management_workspace_api_version_sets_api_management_workspace_id
@@ -1853,6 +2073,11 @@ output "api_management_workspace_api_version_sets_versioning_scheme" {
 }
 
 # --- azurerm_api_management_workspace_certificate ---
+output "api_management_workspace_certificates_id" {
+  description = "Map of id values across all api_management_workspace_certificates, keyed the same as var.api_management_workspace_certificates"
+  value       = module.api_management_workspace_certificates.api_management_workspace_certificates_id
+}
+
 output "api_management_workspace_certificates_api_management_workspace_id" {
   description = "Map of api_management_workspace_id values across all api_management_workspace_certificates, keyed the same as var.api_management_workspace_certificates"
   value       = module.api_management_workspace_certificates.api_management_workspace_certificates_api_management_workspace_id
@@ -1901,6 +2126,11 @@ output "api_management_workspace_certificates_user_assigned_identity_client_id" 
 }
 
 # --- azurerm_api_management_workspace_named_value ---
+output "api_management_workspace_named_values_id" {
+  description = "Map of id values across all api_management_workspace_named_values, keyed the same as var.api_management_workspace_named_values"
+  value       = module.api_management_workspace_named_values.api_management_workspace_named_values_id
+}
+
 output "api_management_workspace_named_values_api_management_workspace_id" {
   description = "Map of api_management_workspace_id values across all api_management_workspace_named_values, keyed the same as var.api_management_workspace_named_values"
   value       = module.api_management_workspace_named_values.api_management_workspace_named_values_api_management_workspace_id
@@ -1938,6 +2168,11 @@ output "api_management_workspace_named_values_value_from_key_vault" {
 }
 
 # --- azurerm_api_management_workspace_policy ---
+output "api_management_workspace_policies_id" {
+  description = "Map of id values across all api_management_workspace_policies, keyed the same as var.api_management_workspace_policies"
+  value       = module.api_management_workspace_policies.api_management_workspace_policies_id
+}
+
 output "api_management_workspace_policies_api_management_workspace_id" {
   description = "Map of api_management_workspace_id values across all api_management_workspace_policies, keyed the same as var.api_management_workspace_policies"
   value       = module.api_management_workspace_policies.api_management_workspace_policies_api_management_workspace_id
@@ -1954,6 +2189,11 @@ output "api_management_workspace_policies_xml_link" {
 }
 
 # --- azurerm_api_management_workspace_policy_fragment ---
+output "api_management_workspace_policy_fragments_id" {
+  description = "Map of id values across all api_management_workspace_policy_fragments, keyed the same as var.api_management_workspace_policy_fragments"
+  value       = module.api_management_workspace_policy_fragments.api_management_workspace_policy_fragments_id
+}
+
 output "api_management_workspace_policy_fragments_api_management_workspace_id" {
   description = "Map of api_management_workspace_id values across all api_management_workspace_policy_fragments, keyed the same as var.api_management_workspace_policy_fragments"
   value       = module.api_management_workspace_policy_fragments.api_management_workspace_policy_fragments_api_management_workspace_id
