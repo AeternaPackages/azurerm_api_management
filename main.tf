@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_apis, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_api_version_sets, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_authorization_servers, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_backends, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_certificates, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -50,7 +50,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_custom_domains, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -59,8 +59,8 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_diagnostics, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name      = module.api_managements.api_managements["${k1}"].name
-        api_management_logger_id = try(module.api_management_loggers.api_management_loggers["${k1}/${v2.api_management_logger_id}"].id, v2.api_management_logger_id)
+        api_management_name      = module.api_managements.api_managements_name["${k1}"]
+        api_management_logger_id = try(module.api_management_loggers.api_management_loggers_id["${k1}/${v2.api_management_logger_id}"], v2.api_management_logger_id)
       })
     }
   ]...)
@@ -69,7 +69,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_email_templates, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -78,7 +78,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_gateways, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -87,7 +87,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_gateway_certificate_authorities, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -96,7 +96,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_gateway_host_name_configurations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -105,7 +105,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_global_schemas, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -114,7 +114,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_groups, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -123,7 +123,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_group_users, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -132,7 +132,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_identity_provider_aads, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -141,7 +141,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_identity_provider_aadb2cs, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -150,7 +150,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_identity_provider_facebooks, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -159,7 +159,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_identity_provider_googles, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -168,7 +168,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_identity_provider_microsofts, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -177,7 +177,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_identity_provider_twitters, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -186,7 +186,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_loggers, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -195,7 +195,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_named_values, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -204,7 +204,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_notification_recipient_emails, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -213,7 +213,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_notification_recipient_users, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -222,7 +222,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_openid_connect_providers, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -231,7 +231,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_policies, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -240,7 +240,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_policy_fragments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -249,7 +249,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_products, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -258,7 +258,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_product_groups, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -267,7 +267,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_product_policies, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -276,7 +276,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_redis_caches, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -285,7 +285,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_subscriptions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -294,7 +294,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_tags, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -303,7 +303,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_users, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_name = module.api_managements.api_managements["${k1}"].name
+        api_management_name = module.api_managements.api_managements_name["${k1}"]
       })
     }
   ]...)
@@ -312,7 +312,7 @@ locals {
     for k1, v1 in var.api_managements : {
       for k2, v2 in coalesce(v1.api_management_workspaces, {}) :
       "${k1}/${k2}" => merge(v2, {
-        api_management_id = module.api_managements.api_managements["${k1}"].id
+        api_management_id = module.api_managements.api_managements_id["${k1}"]
       })
     }
   ]...)
@@ -322,9 +322,9 @@ locals {
       for k2, v2 in coalesce(v1.api_management_apis, {}) : {
         for k3, v3 in coalesce(v2.api_management_api_diagnostics, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_name      = module.api_managements.api_managements["${k1}"].name
-          api_name                 = module.api_management_apis.api_management_apis["${k1}/${k2}"].name
-          api_management_logger_id = try(module.api_management_loggers.api_management_loggers["${k1}/${v3.api_management_logger_id}"].id, v3.api_management_logger_id)
+          api_management_name      = module.api_managements.api_managements_name["${k1}"]
+          api_name                 = module.api_management_apis.api_management_apis_name["${k1}/${k2}"]
+          api_management_logger_id = try(module.api_management_loggers.api_management_loggers_id["${k1}/${v3.api_management_logger_id}"], v3.api_management_logger_id)
         })
       }
     ]...)
@@ -335,8 +335,8 @@ locals {
       for k2, v2 in coalesce(v1.api_management_apis, {}) : {
         for k3, v3 in coalesce(v2.api_management_api_operations, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_name = module.api_managements.api_managements["${k1}"].name
-          api_name            = module.api_management_apis.api_management_apis["${k1}/${k2}"].name
+          api_management_name = module.api_managements.api_managements_name["${k1}"]
+          api_name            = module.api_management_apis.api_management_apis_name["${k1}/${k2}"]
         })
       }
     ]...)
@@ -347,8 +347,8 @@ locals {
       for k2, v2 in coalesce(v1.api_management_apis, {}) : {
         for k3, v3 in coalesce(v2.api_management_api_operation_policies, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_name = module.api_managements.api_managements["${k1}"].name
-          api_name            = module.api_management_apis.api_management_apis["${k1}/${k2}"].name
+          api_management_name = module.api_managements.api_managements_name["${k1}"]
+          api_name            = module.api_management_apis.api_management_apis_name["${k1}/${k2}"]
         })
       }
     ]...)
@@ -359,8 +359,8 @@ locals {
       for k2, v2 in coalesce(v1.api_management_apis, {}) : {
         for k3, v3 in coalesce(v2.api_management_api_policies, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_name = module.api_managements.api_managements["${k1}"].name
-          api_name            = module.api_management_apis.api_management_apis["${k1}/${k2}"].name
+          api_management_name = module.api_managements.api_managements_name["${k1}"]
+          api_name            = module.api_management_apis.api_management_apis_name["${k1}/${k2}"]
         })
       }
     ]...)
@@ -371,8 +371,8 @@ locals {
       for k2, v2 in coalesce(v1.api_management_apis, {}) : {
         for k3, v3 in coalesce(v2.api_management_api_schemas, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_name = module.api_managements.api_managements["${k1}"].name
-          api_name            = module.api_management_apis.api_management_apis["${k1}/${k2}"].name
+          api_management_name = module.api_managements.api_managements_name["${k1}"]
+          api_name            = module.api_management_apis.api_management_apis_name["${k1}/${k2}"]
         })
       }
     ]...)
@@ -383,8 +383,8 @@ locals {
       for k2, v2 in coalesce(v1.api_management_apis, {}) : {
         for k3, v3 in coalesce(v2.api_management_product_apis, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_name = module.api_managements.api_managements["${k1}"].name
-          api_name            = module.api_management_apis.api_management_apis["${k1}/${k2}"].name
+          api_management_name = module.api_managements.api_managements_name["${k1}"]
+          api_name            = module.api_management_apis.api_management_apis_name["${k1}/${k2}"]
         })
       }
     ]...)
@@ -395,8 +395,8 @@ locals {
       for k2, v2 in coalesce(v1.api_management_products, {}) : {
         for k3, v3 in coalesce(v2.api_management_product_tags, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_name       = module.api_managements.api_managements["${k1}"].name
-          api_management_product_id = module.api_management_products.api_management_products["${k1}/${k2}"].id
+          api_management_name       = module.api_managements.api_managements_name["${k1}"]
+          api_management_product_id = module.api_management_products.api_management_products_id["${k1}/${k2}"]
         })
       }
     ]...)
@@ -407,7 +407,7 @@ locals {
       for k2, v2 in coalesce(v1.api_management_workspaces, {}) : {
         for k3, v3 in coalesce(v2.api_management_workspace_api_version_sets, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces["${k1}/${k2}"].id
+          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces_id["${k1}/${k2}"]
         })
       }
     ]...)
@@ -418,7 +418,7 @@ locals {
       for k2, v2 in coalesce(v1.api_management_workspaces, {}) : {
         for k3, v3 in coalesce(v2.api_management_workspace_certificates, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces["${k1}/${k2}"].id
+          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces_id["${k1}/${k2}"]
         })
       }
     ]...)
@@ -429,7 +429,7 @@ locals {
       for k2, v2 in coalesce(v1.api_management_workspaces, {}) : {
         for k3, v3 in coalesce(v2.api_management_workspace_named_values, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces["${k1}/${k2}"].id
+          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces_id["${k1}/${k2}"]
         })
       }
     ]...)
@@ -440,7 +440,7 @@ locals {
       for k2, v2 in coalesce(v1.api_management_workspaces, {}) : {
         for k3, v3 in coalesce(v2.api_management_workspace_policies, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces["${k1}/${k2}"].id
+          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces_id["${k1}/${k2}"]
         })
       }
     ]...)
@@ -451,7 +451,7 @@ locals {
       for k2, v2 in coalesce(v1.api_management_workspaces, {}) : {
         for k3, v3 in coalesce(v2.api_management_workspace_policy_fragments, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces["${k1}/${k2}"].id
+          api_management_workspace_id = module.api_management_workspaces.api_management_workspaces_id["${k1}/${k2}"]
         })
       }
     ]...)
