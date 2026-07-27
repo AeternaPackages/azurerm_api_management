@@ -1225,6 +1225,7 @@ EOT
       resource_id         = optional(string)
       application_insights = optional(object({
         connection_string   = optional(string)
+        identity_client_id  = optional(string)
         instrumentation_key = optional(string)
       }))
       eventhub = optional(object({
