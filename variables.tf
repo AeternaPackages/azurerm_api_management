@@ -525,7 +525,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -534,7 +533,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -543,7 +541,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -553,7 +550,6 @@ EOT
         default_ssl_binding             = optional(bool)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -562,7 +558,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -572,19 +567,12 @@ EOT
       type         = string
     }))
     protocols = optional(object({
-      enable_http2  = optional(bool)
       http2_enabled = optional(bool)
     }))
     security = optional(object({
       backend_ssl30_enabled                               = optional(bool)
       backend_tls10_enabled                               = optional(bool)
       backend_tls11_enabled                               = optional(bool)
-      enable_backend_ssl30                                = optional(bool)
-      enable_backend_tls10                                = optional(bool)
-      enable_backend_tls11                                = optional(bool)
-      enable_frontend_ssl30                               = optional(bool)
-      enable_frontend_tls10                               = optional(bool)
-      enable_frontend_tls11                               = optional(bool)
       frontend_ssl30_enabled                              = optional(bool)
       frontend_tls10_enabled                              = optional(bool)
       frontend_tls11_enabled                              = optional(bool)
@@ -1002,7 +990,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -1012,7 +999,6 @@ EOT
         default_ssl_binding             = optional(bool)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -1021,7 +1007,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -1030,7 +1015,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))
@@ -1039,7 +1023,6 @@ EOT
         certificate_password            = optional(string)
         host_name                       = string
         key_vault_certificate_id        = optional(string)
-        key_vault_id                    = optional(string)
         negotiate_client_certificate    = optional(bool)
         ssl_keyvault_identity_client_id = optional(string)
       })))

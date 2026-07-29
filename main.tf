@@ -459,288 +459,288 @@ locals {
 }
 
 module "api_managements" {
-  source          = "git::https://github.com/AeternaModules/azurerm_api_management.git?ref=v4.81.0"
+  source          = "git::https://github.com/AeternaModules/azurerm_api_management.git?ref=v5.0.0"
   api_managements = local.api_managements
 }
 
 module "api_management_apis" {
-  source              = "git::https://github.com/AeternaModules/azurerm_api_management_api.git?ref=v4.81.0"
+  source              = "git::https://github.com/AeternaModules/azurerm_api_management_api.git?ref=v5.0.0"
   api_management_apis = local.api_management_apis
   depends_on          = [module.api_managements]
 }
 
 module "api_management_api_version_sets" {
-  source                          = "git::https://github.com/AeternaModules/azurerm_api_management_api_version_set.git?ref=v4.81.0"
+  source                          = "git::https://github.com/AeternaModules/azurerm_api_management_api_version_set.git?ref=v5.0.0"
   api_management_api_version_sets = local.api_management_api_version_sets
   depends_on                      = [module.api_managements]
 }
 
 module "api_management_authorization_servers" {
-  source                               = "git::https://github.com/AeternaModules/azurerm_api_management_authorization_server.git?ref=v4.81.0"
+  source                               = "git::https://github.com/AeternaModules/azurerm_api_management_authorization_server.git?ref=v5.0.0"
   api_management_authorization_servers = local.api_management_authorization_servers
   depends_on                           = [module.api_managements]
 }
 
 module "api_management_backends" {
-  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_backend.git?ref=v4.81.0"
+  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_backend.git?ref=v5.0.0"
   api_management_backends = local.api_management_backends
   depends_on              = [module.api_managements]
 }
 
 module "api_management_certificates" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_certificate.git?ref=v4.81.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_certificate.git?ref=v5.0.0"
   api_management_certificates = local.api_management_certificates
   depends_on                  = [module.api_managements]
 }
 
 module "api_management_custom_domains" {
-  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_custom_domain.git?ref=v4.81.0"
+  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_custom_domain.git?ref=v5.0.0"
   api_management_custom_domains = local.api_management_custom_domains
   depends_on                    = [module.api_managements]
 }
 
 module "api_management_diagnostics" {
-  source                     = "git::https://github.com/AeternaModules/azurerm_api_management_diagnostic.git?ref=v4.81.0"
+  source                     = "git::https://github.com/AeternaModules/azurerm_api_management_diagnostic.git?ref=v5.0.0"
   api_management_diagnostics = local.api_management_diagnostics
   depends_on                 = [module.api_managements, module.api_management_loggers]
 }
 
 module "api_management_email_templates" {
-  source                         = "git::https://github.com/AeternaModules/azurerm_api_management_email_template.git?ref=v4.81.0"
+  source                         = "git::https://github.com/AeternaModules/azurerm_api_management_email_template.git?ref=v5.0.0"
   api_management_email_templates = local.api_management_email_templates
   depends_on                     = [module.api_managements]
 }
 
 module "api_management_gateways" {
-  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_gateway.git?ref=v4.81.0"
+  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_gateway.git?ref=v5.0.0"
   api_management_gateways = local.api_management_gateways
   depends_on              = [module.api_managements]
 }
 
 module "api_management_gateway_certificate_authorities" {
-  source                                         = "git::https://github.com/AeternaModules/azurerm_api_management_gateway_certificate_authority.git?ref=v4.81.0"
+  source                                         = "git::https://github.com/AeternaModules/azurerm_api_management_gateway_certificate_authority.git?ref=v5.0.0"
   api_management_gateway_certificate_authorities = local.api_management_gateway_certificate_authorities
   depends_on                                     = [module.api_managements]
 }
 
 module "api_management_gateway_host_name_configurations" {
-  source                                          = "git::https://github.com/AeternaModules/azurerm_api_management_gateway_host_name_configuration.git?ref=v4.81.0"
+  source                                          = "git::https://github.com/AeternaModules/azurerm_api_management_gateway_host_name_configuration.git?ref=v5.0.0"
   api_management_gateway_host_name_configurations = local.api_management_gateway_host_name_configurations
   depends_on                                      = [module.api_managements]
 }
 
 module "api_management_global_schemas" {
-  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_global_schema.git?ref=v4.81.0"
+  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_global_schema.git?ref=v5.0.0"
   api_management_global_schemas = local.api_management_global_schemas
   depends_on                    = [module.api_managements]
 }
 
 module "api_management_groups" {
-  source                = "git::https://github.com/AeternaModules/azurerm_api_management_group.git?ref=v4.81.0"
+  source                = "git::https://github.com/AeternaModules/azurerm_api_management_group.git?ref=v5.0.0"
   api_management_groups = local.api_management_groups
   depends_on            = [module.api_managements]
 }
 
 module "api_management_group_users" {
-  source                     = "git::https://github.com/AeternaModules/azurerm_api_management_group_user.git?ref=v4.81.0"
+  source                     = "git::https://github.com/AeternaModules/azurerm_api_management_group_user.git?ref=v5.0.0"
   api_management_group_users = local.api_management_group_users
   depends_on                 = [module.api_managements]
 }
 
 module "api_management_identity_provider_aads" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_aad.git?ref=v4.81.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_aad.git?ref=v5.0.0"
   api_management_identity_provider_aads = local.api_management_identity_provider_aads
   depends_on                            = [module.api_managements]
 }
 
 module "api_management_identity_provider_aadb2cs" {
-  source                                   = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_aadb2c.git?ref=v4.81.0"
+  source                                   = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_aadb2c.git?ref=v5.0.0"
   api_management_identity_provider_aadb2cs = local.api_management_identity_provider_aadb2cs
   depends_on                               = [module.api_managements]
 }
 
 module "api_management_identity_provider_facebooks" {
-  source                                     = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_facebook.git?ref=v4.81.0"
+  source                                     = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_facebook.git?ref=v5.0.0"
   api_management_identity_provider_facebooks = local.api_management_identity_provider_facebooks
   depends_on                                 = [module.api_managements]
 }
 
 module "api_management_identity_provider_googles" {
-  source                                   = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_google.git?ref=v4.81.0"
+  source                                   = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_google.git?ref=v5.0.0"
   api_management_identity_provider_googles = local.api_management_identity_provider_googles
   depends_on                               = [module.api_managements]
 }
 
 module "api_management_identity_provider_microsofts" {
-  source                                      = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_microsoft.git?ref=v4.81.0"
+  source                                      = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_microsoft.git?ref=v5.0.0"
   api_management_identity_provider_microsofts = local.api_management_identity_provider_microsofts
   depends_on                                  = [module.api_managements]
 }
 
 module "api_management_identity_provider_twitters" {
-  source                                    = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_twitter.git?ref=v4.81.0"
+  source                                    = "git::https://github.com/AeternaModules/azurerm_api_management_identity_provider_twitter.git?ref=v5.0.0"
   api_management_identity_provider_twitters = local.api_management_identity_provider_twitters
   depends_on                                = [module.api_managements]
 }
 
 module "api_management_loggers" {
-  source                 = "git::https://github.com/AeternaModules/azurerm_api_management_logger.git?ref=v4.81.0"
+  source                 = "git::https://github.com/AeternaModules/azurerm_api_management_logger.git?ref=v5.0.0"
   api_management_loggers = local.api_management_loggers
   depends_on             = [module.api_managements]
 }
 
 module "api_management_named_values" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_named_value.git?ref=v4.81.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_named_value.git?ref=v5.0.0"
   api_management_named_values = local.api_management_named_values
   depends_on                  = [module.api_managements]
 }
 
 module "api_management_notification_recipient_emails" {
-  source                                       = "git::https://github.com/AeternaModules/azurerm_api_management_notification_recipient_email.git?ref=v4.81.0"
+  source                                       = "git::https://github.com/AeternaModules/azurerm_api_management_notification_recipient_email.git?ref=v5.0.0"
   api_management_notification_recipient_emails = local.api_management_notification_recipient_emails
   depends_on                                   = [module.api_managements]
 }
 
 module "api_management_notification_recipient_users" {
-  source                                      = "git::https://github.com/AeternaModules/azurerm_api_management_notification_recipient_user.git?ref=v4.81.0"
+  source                                      = "git::https://github.com/AeternaModules/azurerm_api_management_notification_recipient_user.git?ref=v5.0.0"
   api_management_notification_recipient_users = local.api_management_notification_recipient_users
   depends_on                                  = [module.api_managements]
 }
 
 module "api_management_openid_connect_providers" {
-  source                                  = "git::https://github.com/AeternaModules/azurerm_api_management_openid_connect_provider.git?ref=v4.81.0"
+  source                                  = "git::https://github.com/AeternaModules/azurerm_api_management_openid_connect_provider.git?ref=v5.0.0"
   api_management_openid_connect_providers = local.api_management_openid_connect_providers
   depends_on                              = [module.api_managements]
 }
 
 module "api_management_policies" {
-  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_policy.git?ref=v4.81.0"
+  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_policy.git?ref=v5.0.0"
   api_management_policies = local.api_management_policies
   depends_on              = [module.api_managements]
 }
 
 module "api_management_policy_fragments" {
-  source                          = "git::https://github.com/AeternaModules/azurerm_api_management_policy_fragment.git?ref=v4.81.0"
+  source                          = "git::https://github.com/AeternaModules/azurerm_api_management_policy_fragment.git?ref=v5.0.0"
   api_management_policy_fragments = local.api_management_policy_fragments
   depends_on                      = [module.api_managements]
 }
 
 module "api_management_products" {
-  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_product.git?ref=v4.81.0"
+  source                  = "git::https://github.com/AeternaModules/azurerm_api_management_product.git?ref=v5.0.0"
   api_management_products = local.api_management_products
   depends_on              = [module.api_managements]
 }
 
 module "api_management_product_groups" {
-  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_product_group.git?ref=v4.81.0"
+  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_product_group.git?ref=v5.0.0"
   api_management_product_groups = local.api_management_product_groups
   depends_on                    = [module.api_managements]
 }
 
 module "api_management_product_policies" {
-  source                          = "git::https://github.com/AeternaModules/azurerm_api_management_product_policy.git?ref=v4.81.0"
+  source                          = "git::https://github.com/AeternaModules/azurerm_api_management_product_policy.git?ref=v5.0.0"
   api_management_product_policies = local.api_management_product_policies
   depends_on                      = [module.api_managements]
 }
 
 module "api_management_redis_caches" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_redis_cache.git?ref=v4.81.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_redis_cache.git?ref=v5.0.0"
   api_management_redis_caches = local.api_management_redis_caches
   depends_on                  = [module.api_managements]
 }
 
 module "api_management_subscriptions" {
-  source                       = "git::https://github.com/AeternaModules/azurerm_api_management_subscription.git?ref=v4.81.0"
+  source                       = "git::https://github.com/AeternaModules/azurerm_api_management_subscription.git?ref=v5.0.0"
   api_management_subscriptions = local.api_management_subscriptions
   depends_on                   = [module.api_managements]
 }
 
 module "api_management_tags" {
-  source              = "git::https://github.com/AeternaModules/azurerm_api_management_tag.git?ref=v4.81.0"
+  source              = "git::https://github.com/AeternaModules/azurerm_api_management_tag.git?ref=v5.0.0"
   api_management_tags = local.api_management_tags
   depends_on          = [module.api_managements]
 }
 
 module "api_management_users" {
-  source               = "git::https://github.com/AeternaModules/azurerm_api_management_user.git?ref=v4.81.0"
+  source               = "git::https://github.com/AeternaModules/azurerm_api_management_user.git?ref=v5.0.0"
   api_management_users = local.api_management_users
   depends_on           = [module.api_managements]
 }
 
 module "api_management_workspaces" {
-  source                    = "git::https://github.com/AeternaModules/azurerm_api_management_workspace.git?ref=v4.81.0"
+  source                    = "git::https://github.com/AeternaModules/azurerm_api_management_workspace.git?ref=v5.0.0"
   api_management_workspaces = local.api_management_workspaces
   depends_on                = [module.api_managements]
 }
 
 module "api_management_api_diagnostics" {
-  source                         = "git::https://github.com/AeternaModules/azurerm_api_management_api_diagnostic.git?ref=v4.81.0"
+  source                         = "git::https://github.com/AeternaModules/azurerm_api_management_api_diagnostic.git?ref=v5.0.0"
   api_management_api_diagnostics = local.api_management_api_diagnostics
   depends_on                     = [module.api_managements, module.api_management_apis, module.api_management_loggers]
 }
 
 module "api_management_api_operations" {
-  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_api_operation.git?ref=v4.81.0"
+  source                        = "git::https://github.com/AeternaModules/azurerm_api_management_api_operation.git?ref=v5.0.0"
   api_management_api_operations = local.api_management_api_operations
   depends_on                    = [module.api_managements, module.api_management_apis]
 }
 
 module "api_management_api_operation_policies" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_api_operation_policy.git?ref=v4.81.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_api_operation_policy.git?ref=v5.0.0"
   api_management_api_operation_policies = local.api_management_api_operation_policies
   depends_on                            = [module.api_managements, module.api_management_apis]
 }
 
 module "api_management_api_policies" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_api_policy.git?ref=v4.81.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_api_policy.git?ref=v5.0.0"
   api_management_api_policies = local.api_management_api_policies
   depends_on                  = [module.api_managements, module.api_management_apis]
 }
 
 module "api_management_api_schemas" {
-  source                     = "git::https://github.com/AeternaModules/azurerm_api_management_api_schema.git?ref=v4.81.0"
+  source                     = "git::https://github.com/AeternaModules/azurerm_api_management_api_schema.git?ref=v5.0.0"
   api_management_api_schemas = local.api_management_api_schemas
   depends_on                 = [module.api_managements, module.api_management_apis]
 }
 
 module "api_management_product_apis" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_product_api.git?ref=v4.81.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_product_api.git?ref=v5.0.0"
   api_management_product_apis = local.api_management_product_apis
   depends_on                  = [module.api_managements, module.api_management_apis]
 }
 
 module "api_management_product_tags" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_product_tag.git?ref=v4.81.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_api_management_product_tag.git?ref=v5.0.0"
   api_management_product_tags = local.api_management_product_tags
   depends_on                  = [module.api_managements, module.api_management_products]
 }
 
 module "api_management_workspace_api_version_sets" {
-  source                                    = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_api_version_set.git?ref=v4.81.0"
+  source                                    = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_api_version_set.git?ref=v5.0.0"
   api_management_workspace_api_version_sets = local.api_management_workspace_api_version_sets
   depends_on                                = [module.api_management_workspaces]
 }
 
 module "api_management_workspace_certificates" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_certificate.git?ref=v4.81.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_certificate.git?ref=v5.0.0"
   api_management_workspace_certificates = local.api_management_workspace_certificates
   depends_on                            = [module.api_management_workspaces]
 }
 
 module "api_management_workspace_named_values" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_named_value.git?ref=v4.81.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_named_value.git?ref=v5.0.0"
   api_management_workspace_named_values = local.api_management_workspace_named_values
   depends_on                            = [module.api_management_workspaces]
 }
 
 module "api_management_workspace_policies" {
-  source                            = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_policy.git?ref=v4.81.0"
+  source                            = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_policy.git?ref=v5.0.0"
   api_management_workspace_policies = local.api_management_workspace_policies
   depends_on                        = [module.api_management_workspaces]
 }
 
 module "api_management_workspace_policy_fragments" {
-  source                                    = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_policy_fragment.git?ref=v4.81.0"
+  source                                    = "git::https://github.com/AeternaModules/azurerm_api_management_workspace_policy_fragment.git?ref=v5.0.0"
   api_management_workspace_policy_fragments = local.api_management_workspace_policy_fragments
   depends_on                                = [module.api_management_workspaces]
 }
